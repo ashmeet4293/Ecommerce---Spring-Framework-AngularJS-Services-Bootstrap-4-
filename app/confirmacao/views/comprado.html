@@ -1,0 +1,82 @@
+<div class="container" ng-controller="ConfirmacaoController">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-img">
+                    <img ng-src="{{jogoPedido.foto}}" width="250px">
+                </div>
+                <div class="card-block">
+                    <h1>{{jogoPedido.nomeJogo}}</h1>
+                    <h1>R$ {{jogoPedido.preco}}</h1>
+                    <h3>{{jogoPedido.console.nomeConsole}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <h5>Detalhes da compra</h5>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-sort-amount-asc"></i> Quantidade</th>
+                            <th><i class="fa fa-gamepad"></i> Preço Uni.</th>
+                            <th><i class="fa fa-truck"></i> Frete</th>
+                            <th><i class="fa fa-money"></i> Subtotal</th>
+                            <th><i class="fa fa-money"></i> Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{pedidoComprado.quantidade}}</td>
+                            <td>R$ {{jogoPedido.preco}}</td>
+                            <td>R$ {{pedidoComprado.frete}}</td>
+                            <td>R$ {{pedidoComprado.subTotal | number:2}}</td>
+                            <td> <b>R$ {{pedidoComprado.total| number:2 }}</b> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5>Endereço de entrega</h5>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>CEP</th>
+                            <th>Endereço </th>
+                            <th>Número </th>
+                            <th>Complemento </th>
+                            <th>Referencia</th>
+                            <th>Bairro</th>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{enderecoSelecionado.cep}}</td>
+                            <td>{{enderecoSelecionado.endereco}}</td>
+                            <td>{{enderecoSelecionado.numero}}</td>
+                            <td>{{enderecoSelecionado.complemento}}</td>
+                            <td>{{enderecoSelecionado.referencia}} </td>
+                            <td>{{enderecoSelecionado.bairro}} </td>
+                            <td>{{enderecoSelecionado.cidade}} </td>
+                            <td>{{enderecoSelecionado.estado}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5>Forma de pagamento</h5>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-info"></i> Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{pagamentoSelecionado.tipo}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

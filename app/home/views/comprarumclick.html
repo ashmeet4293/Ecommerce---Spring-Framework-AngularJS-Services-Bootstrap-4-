@@ -1,0 +1,122 @@
+<div class="modal-body" style="background-color: #ffbd2e">
+    <div class="row">
+        <div class="col-6">
+            <h6><i class="fa fa-user"></i> <b>Dados Pessoais</b></h6>
+            <div class="card">
+                <div class="card-block text-dados">
+                    <h6><b>{{cliente.nome}}</b></p>
+                        <h6><i class="fa fa-phone"> </i><b> Telefone: </b>{{cliente.telefone}}</h6>
+                        <h6><i class="fa fa-mobile"> </i><b> Celular: </b>{{cliente.celular}}</h6>
+                        <h6><i class="fa fa-envelope"> </i><b> Email: </b>{{cliente.email}}</h6>
+                </div>
+                <a href="" class="btn btn-info btn-sm" ng-click="alterarMeusDados(cliente)" ng-controller="HomeController">Quero alterar</a>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h6><i class="fa fa-gamepad"></i> <b>Informações</b></h6>
+            <div class="card text-center" style="border: 1px solid white">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="img-top" ng-src="{{jogoComprar.foto}}" width="60px">
+                        </div>
+                        <div class="col-9">
+                            <h6 class="card-title"><b>{{jogoComprar.nomeJogo}}</b></h6>
+                            <h6 style="font-size: 12px"><b>{{jogoComprar.console.nomeConsole}}</b></h6>
+                            <h6 calss="card-text" style="font-size: 13px"><b>R$ {{jogoComprar.preco}}</b></h6>
+                            <p style="font-size: 12px">até <b>12x</b> de <span class="badge badge-info" style="font-size: 10px"> R$ {{jogoComprar.preco / 12| number: 2}}</span> sem juros
+                                ou <span class="badge badge-success" style="font-size: 10px"> R$ {{jogoComprar.preco - jogoComprar.preco * 0.10| number : 2}} </span> via Boleto Bancário
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h6><i class="fa fa-money"></i> <b>Forma de Pagamento</b></h6>
+            <div class="card-block">
+                <div class="row" style="margin-bottom: 10px;">
+
+                    <div id="dados-forma-pagamento" ng-repeat="formas in pagamentos">
+                        <div class="input-group" id="forma-pagamento-2">
+                            <span class="input-group-addon-2">
+                                <input type="radio" name="thisguyfucks" ng-click="atualizaPagamento(formas.idPagamento)" ng-model="pagamento">
+                            </span> 
+                            <p style="margin-top: 15px; font-size: 12px;"><b>{{formas.tipo}}</b></p>
+                        </div>                
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="alert alert-success" role="alert" ng-hide="mostrarDesconto" style="font-size: 13px;">
+                        <b>{{valorDesconto}}</b>
+                        <p>Economize <b>R$ {{desconto| number: 2}}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h6><i class="fa fa-home"></i> <b>Endereco</b></h6>
+            <div class="card">
+                <div ng-repeat="endereco in enderecos">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="radio" name="endereco" ng-click="getIdEndereco(endereco.idEndereco)">
+                        </span>
+                    </div>
+                    <div id="endereco-confirmacao">
+                        <p>{{endereco.cep}}, {{endereco.endereco}}, {{endereco.numero}}</p>
+                    </div>
+                </div>
+                <a href="" class="btn btn-info btn-sm" ng-click="alterarDadosEndereco()" ng-controller="HomeController">Quero alterar</a>
+            </div>   
+        </div>
+
+        <div class="col-4" >
+            <h6><i class="fa fa-truck"></i> <b>Forma de entrega</b></h6>
+            <div class="input-group" id="forma-entrega-2">
+                <span class="input-group-addon-2">
+                    <input type="radio" name="sedex" ng-click="atualizaSedex()">
+                </span> 
+                <p style="margin-top: 11px; font-size: 13px;"> Sedex R$ <b>{{sedex}}</b></p>
+            </div>
+            
+            <div class="row offset-1" style="margin-top: 10px">
+                <div class="alert alert-info" role="alert" ng-hide="mostrarPrazo" style="font-size: 13px;">
+                    <h4 class="alert-heading">Prazo</h4>
+                    <b>{{prazo}}</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <h6><i class="fa fa-truck"></i> <b>Forma de entrega</b></h6>
+            <div class="input-group" id="forma-entrega-2">
+                <span class="input-group-addon-2">
+                    <input type="radio" name="sedex"  ng-click="atualizaPac()">
+                </span>
+                <p style="margin-top: 11px; font-size: 13px;"> Pac R$ <b>{{pac}}</b></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-12 offset-6"> 
+            <p style="font-size: 12px"><b>Quantidade </b><input class="input-text" ng-model="quantidade" style="width: 32px; border: 1px solid white;"></p>
+            <b> <h2>TOTAL R$ {{ (jogoComprar.preco - desconto) * quantidade + pedido.entrega | number: 2}}</h2></b>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer footer-1c" style="background-color: #ffbd2e">
+    <button class="btn-new btn-3 btn-3a icon-cart pull-2" ng-click="salvarPedido()">Comprar</button>
+</div>

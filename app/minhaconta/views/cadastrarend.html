@@ -1,0 +1,71 @@
+<div class="modal-header">
+    <h5>Cadastro de Endereço</h5>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-6" id="cadastro-endereco-modal">
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.cep"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="CEP">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-building-o"></i> CEP</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.endereco"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="ENDEREÇO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-home fa-2x"></i> ENDEREÇO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.numero"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="NÚMERO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-sort-numeric-asc fa-2x"></i> NÚMERO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.complemento"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="COMPLEMENTO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-bars fa-2x"></i> COMPLEMENTO</span>
+                </label>
+            </span>
+        </div>
+        
+        <div class="col-6" id="cadastro-endereco-modal">
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.referencia"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="REFERENCIA">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-university fa-2x"></i> REFERENCIA</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.bairro"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="BAIRRO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-bus fa-2x"></i> BAIRRO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.cidade"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="CIDADE">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-bicycle fa-2x"></i> CIDADE</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.estado"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="ESTADO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-plane fa-2x"></i> ESTADO</span>
+                </label>
+            </span>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-danger btn-sm" ng-click="Fechar()" style="cursor: pointer;"> Cancelar</button>
+            <button class="btn btn-info btn-sm" ng-click="criarNovoEndereco(endereco)" style="cursor: pointer;"> Salvar</button>
+        </div>
+    </div>
+</div>

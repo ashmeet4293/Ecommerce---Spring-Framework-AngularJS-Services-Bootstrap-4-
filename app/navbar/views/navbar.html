@@ -1,0 +1,19 @@
+<div class="container" ng-controller="NavbarController">
+    <br/>
+    <div class="row">
+        <div class="col-6 ">
+            <a href="#/home" class="hvr-float btn btn-secondary btn-sm offset-1" id="btn-home"> <b><i class="fa fa-gamepad fa-2x"></i></b></a>
+            <a href="" ng-click="logout()" class="hvr-float btn btn-secondary btn-sm" id="btn-logout" ng-hide="botoes"> <b>Logout</b></a>
+            <a href="#/cliente" class="hvr-float btn btn-secondary btn-sm" id="btn-minha-conta" ng-hide="botoes"> <b>Minha Conta</b></a>
+            <a href="#/pedidos" class="hvr-float btn btn-secondary btn-sm" id="btn-pedidos" ng-hide="botoes"> <b>Meus Pedidos</b></a>
+        </div>
+    </div>
+   
+    <nav class="navbar" id="nav">
+        <form id="form-inline" class="inline-menu">
+            <a href="" class="btn btn-secondary btn-sm hvr-grow" ng-click="jogosPorConsole(console.idConsole)" id="btn-menu" ng-repeat="console in consoles">
+                <b> {{console.nomeConsole}} </b>
+            </a>
+        </form>
+    </nav>
+</div>

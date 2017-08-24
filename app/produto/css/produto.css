@@ -1,0 +1,76 @@
+.info-compra{
+    background-color: #f7f7f9;
+    border: 4px solid #a8a8a8;
+}
+
+#parcelas{
+    font-size: 10px;
+}
+
+#parcelas p{
+    margin-bottom: 1px;
+}
+
+.img-card{
+    background-color: white;
+}
+
+.card-produto{
+    background-color: white;
+}
+
+.card-sem-borda{
+    border: 1px solid white;
+}
+
+.card.avaliacoes{
+    border: 2px solid #fff8f8;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.card.avaliacoes:hover{
+    border: 2px solid #fff8f8;
+    box-shadow: 10px 10px 10px 5px #888888;
+}
+
+.card.avaliacoes p{
+    font-size: 15px;
+}
+
+.font-thumbs-up{
+     position: relative;
+}
+
+.img-relacionado{
+    border: 0 solid white;
+}
+
+.font-thumbs-up:before{
+
+    
+    content: "\f087";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    /*--adjust as necessary--*/
+    color: #4cbaff;
+    font-size: 50px;
+}
+
+.font-thumbs-down{
+     position: relative;
+}
+
+.font-thumbs-down:before{
+   
+    content: "\f088";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    /*--adjust as necessary--*/
+    color: #ff5f5f;
+    font-size: 50px;
+}
+

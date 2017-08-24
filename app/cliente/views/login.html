@@ -1,0 +1,32 @@
+<div class="container-fluid" style="overflow-y: hidden; overflow-x: hidden">
+    <div class="row">
+        <div class="col-12">
+            <div class="cont" ng-controller="ClienteController">
+                <br/>
+                <h1>JÁ SOU CADASTRADO</h1>
+                <section class="content bgcolor-5">
+                    <span class="input input--minoru">
+                        <input class="input__field input__field--yoko" type="text" ng-model="cliente.email"/>
+                        <label class="input__label input__label--yoko" for="input-16">
+                            <span class="input__label-content input__label-content--yoko">EMAIL</span>
+                        </label>
+                    </span>
+                    <span class="input input--minoru">
+                        <input class="input__field input__field--yoko" type="password" ng-model="cliente.senha" />
+                        <label class="input__label input__label--yoko" for="input-17">
+                            <span class="input__label-content input__label-content--yoko">SENHA</span>
+                        </label>
+                    </span>
+                </section>
+                <button class="btn-new btn-1" ng-click="loginCliente()">Login</button>
+                <button class="btn-new btn-1" ng-click="naoSouCliente()">Ainda não é cliente?</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

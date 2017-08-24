@@ -1,0 +1,114 @@
+<div class="container" ng-controller="minhaContaController">
+    <div class="row">
+        <div class="col-8 offset-3" style="margin-top: -14.5em">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href=""><b>Dados Pessoais</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-block" id="dados-cliente">
+                    
+                    <div ng-click="alterarNome(cliente)" style="cursor: pointer">
+                        <h2 ng-hide="h4Nome" class="card-title text-center" ><b>{{cliente.nome}}</b></h2>
+                    </div><br/>
+                    <div ng-show="inputAlterarNome">
+                        <b class="badge badge-info">Nome Completo </b>
+                        <input type="text" class="form-control" ng-model="cliente.nome">
+                        <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                        <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            
+                            <div ng-click="alterarEmail(cliente)" ng-disabled="emaildisabled" style="cursor: pointer">
+                                <p ng-hide="pEmail" class="card-title "><b>Email: </b>{{cliente.email}}</p>
+                            </div>
+                            <div ng-show="inputAlterarEmail" ng-disabled="emaildisabled">
+                                <b class="badge badge-info">Email </b>
+                                <input type="text" class="form-control" ng-model="cliente.email">
+                                <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                                <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                            </div>
+
+                            <div ng-click="alterarCpf(cliente)" style="cursor: pointer">
+                                <p ng-hide="pCpf" class="card-title "><b>CPF: </b>{{cliente.cpf}}</p>
+                            </div>
+                            <div ng-show="inputAlterarCpf">
+                                <b class="badge badge-info">CPF / Somente números</b>
+                                <input type="text" id="cpf" class="form-control" ng-model="cliente.cpf">
+                                <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                                <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                            </div>
+
+                            <div ng-click="alterarTelefone(cliente)" style="cursor: pointer">
+                                <p ng-hide="pTelefone" class="card-title "><b>Telefone: </b>{{cliente.telefone}}</p>
+                            </div>
+                            <div ng-show="inputAlterarTelefone">
+                                <b class="badge badge-info">Telefone / Somente números </b>
+                                <input type="text" id="telefone" class="form-control" ng-model="cliente.telefone">
+                                <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                                <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-6">
+                            <div ng-click="alterarCelular(cliente)" style="cursor: pointer">
+                                <p ng-hide="pCelular" class="card-title "><b>Celular: </b>{{cliente.celular}}</p>
+                            </div>
+                            <div ng-show="inputAlterarCelular">
+                                <b class="badge badge-info">Celular / Somente números </b>
+                                <input type="text" id="celular" class="form-control" ng-model="cliente.celular">
+                                <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                                <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                            </div>
+
+
+                            <div ng-click="alterarSexo(cliente)" style="cursor: pointer">
+                                <p ng-hide="pSexo" class="card-title "><b>Sexo: </b>{{cliente.sexo}}</p>
+                            </div>
+                            <div class="disabled" ng-show="inputAlterarSexo">
+                                <b class="badge badge-info">Sexo </b>
+                                <input type="text" class="form-control" ng-model="cliente.sexo">
+                                <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                                <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                            </div>
+
+
+                            <div ng-click="alterarData(cliente)" style="cursor: pointer">
+                                <p ng-hide="pData" class="card-title "><b>Data de Nascimento: </b>{{cliente.dataNascimento| date:medium}}</p>
+                            </div>
+                            <div ng-show="inputAlterarData">
+                                <b class="badge badge-info">Data de Nascimento </b>
+                                <input type="date" class="form-control">
+                                <a href="" ng-click="alterarDados()"><button class="btn btn-1"><i class="fa fa-check"></i></button></a>
+                                <a href="" ng-click="cancelarAlterarDados()"><button class="btn btn-1"><i class="fa fa-times"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#telefone').mask('(00) 0000-0000');
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#celular').mask('(00) 00000-0000');
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#cpf').mask('000.000.000-00');
+    });
+</script>

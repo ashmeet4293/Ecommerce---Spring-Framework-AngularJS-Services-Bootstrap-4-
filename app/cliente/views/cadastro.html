@@ -1,0 +1,190 @@
+<div class="container" ng-controller="ClienteController">
+    <div class="row" style="margin-bottom: 25px">
+        <div class="col-12" id="dados-confirmacao">
+            <h4><i class="fa fa-hand-stop-o fa-4x"></i> Confirmação</h4>
+            <div class="row">
+                <div class="col-6">
+                    <span class="input input--isao">
+                        <input class="input__field input__field--isao" type="text" ng-model="cliente.email"/>
+                        <label class="input__label input__label--isao" for="input-38" data-content="EMAIL">
+                            <span class="input__label-content input__label-content--isao"><i class="fa fa-envelope fa-2x"></i> EMAIL</span>
+                        </label>
+                    </span>
+                    <span class="input input--isao">
+                        <input class="input__field input__field--isao" type="password" ng-model="cliente.senha"/>
+                        <label class="input__label input__label--isao" for="input-39" data-content="SENHA">
+                            <span class="input__label-content input__label-content--isao"><i class="fa fa-lock fa-2x"></i> SENHA</span>
+                        </label>
+                    </span>
+                </div>
+                <div class="col-6">
+                    <span class="input input--isao">
+                        <input class="input__field input__field--isao" type="text" ng-model="confirmarEmail"/>
+                        <label class="input__label input__label--isao" for="input-40" data-content="CONFIRMAR EMAIL">
+                            <span class="input__label-content input__label-content--isao"><i class="fa fa-envelope fa-2x"></i> CONFIRMAR EMAIL</span>
+                        </label>
+                    </span>
+                    <span class="input input--isao">
+                        <input class="input__field input__field--isao" type="password" ng-model="confirmarSenha"/>
+                        <label class="input__label input__label--isao" for="input-41" data-content="CONFIRMAR SENHA">
+                            <span class="input__label-content input__label-content--isao"><i class="fa fa-lock fa-2x"></i> CONFIRMAR SENHA</span>
+                        </label>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-6" id="dados-pessoais">
+            <h4><i class="fa fa-smile-o fa-4x"></i> Dados Pessoais</h4>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="cliente.nome"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="NOME COMPLETO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-user-circle-o fa-2x"></i> NOME COMPLETO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="cliente.cpf"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="CPF">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-id-card-o fa-2x"></i> CPF</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="cliente.telefone"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="TELEFONE">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-phone-square fa-2x"></i> TELEFONE</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="cliente.celular"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="CELULAR">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-mobile-phone fa-2x"></i> CELULAR</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="cliente.sexo"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="SEXO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-venus-mars fa-2x"></i> SEXO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="date" ng-model="cliente.dataNascimento"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="DATA DE NASCIMENTO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-birthday-cake fa-2x"></i> DATA DE NASCIMENTO</span>
+                </label>
+            </span>
+        </div>
+
+        <div class="col-5 offset-1" id="dados-endereco">
+            <h4> <i class="fa fa-truck fa-4x"></i> Endereço</h4>
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.cep"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="CEP">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-building-o"></i> CEP</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.endereco"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="ENDEREÇO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-home fa-2x"></i> ENDEREÇO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.numero"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="NÚMERO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-sort-numeric-asc fa-2x"></i> NÚMERO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.complemento"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="COMPLEMENTO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-bars fa-2x"></i> COMPLEMENTO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.referencia"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="REFERENCIA">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-university fa-2x"></i> REFERENCIA</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.bairro"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="BAIRRO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-bus fa-2x"></i> BAIRRO</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.cidade"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="CIDADE">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-bicycle fa-2x"></i> CIDADE</span>
+                </label>
+            </span>
+
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="endereco.estado"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="ESTADO">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-plane fa-2x"></i> ESTADO</span>
+                </label>
+            </span>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 45px">
+        <div class="col-6">
+            <button class="btn-new btn-1" ng-click="cadastrarCliente()"> Cadastrar</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    (function () {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+            (function () {
+                // Make sure we trim BOM and NBSP
+                var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                String.prototype.trim = function () {
+                    return this.replace(rtrim, '');
+                };
+            })();
+        }
+
+        [].slice.call(document.querySelectorAll('input.input__field')).forEach(function (inputEl) {
+            // in case the input is already filled..
+            if (inputEl.value.trim() !== '') {
+                classie.add(inputEl.parentNode, 'input--filled');
+            }
+
+            // events:
+            inputEl.addEventListener('focus', onInputFocus);
+            inputEl.addEventListener('blur', onInputBlur);
+        });
+
+        function onInputFocus(ev) {
+            classie.add(ev.target.parentNode, 'input--filled');
+        }
+
+        function onInputBlur(ev) {
+            if (ev.target.value.trim() === '') {
+                classie.remove(ev.target.parentNode, 'input--filled');
+            }
+        }
+    })();
+
+</script>

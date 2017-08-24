@@ -1,0 +1,131 @@
+<div class="container" ng-controller="ConfirmacaoController">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th><i class="fa fa-gamepad"></i> Jogo </th>
+                        <th><i class="fa fa-sort-amount-asc"></i> Quantidade</th>
+                        <th><i class="fa fa-money"></i> Preço Uni.</th>
+                        <th><i class="fa fa-truck"></i> Frete</th>
+                        <th><i class="fa fa-money"></i> Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{adicionadoNoCarrinho.nomeJogo}} - {{adicionadoNoCarrinho.console.nomeConsole}}</td>
+                        <td>{{adicionadoNoCarrinho.qtd}}</td>
+                        <td>R$ {{adicionadoNoCarrinho.preco}}</td>
+                        <td>R$ {{pedido.entrega}}</td>
+                        <td>R$ {{adicionadoNoCarrinho.preco * adicionadoNoCarrinho.qtd + pedido.entrega| number : 2}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6><i class="fa fa-user"></i> <b>Dados Pessoais </b></h6>
+                </div>
+                <div class="card-block"  id="dados-pessoais-confirmacao">
+                    <div class="card-text">
+                        <p><b>Nome:  </b>{{cliente.nome}}</p>
+                        <p><b>Email:</b> {{cliente.email}}</p>
+                        <p><b>Celular: </b>{{cliente.celular}}</p>
+                        <p><b>Telefone: </b>{{cliente.telefone}}</p>
+                        <p><b>CPF: </b>{{cliente.cpf}}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="" class="btn btn-info btn-sm offset-3" ng-click="alterarDadosDoCliente(cliente)">Alterar Dados</a>
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card card-p" style="margin-bottom: 15px">
+                <div class="card-header">
+                    <h6> <i class="fa fa-truck"></i> <b> Forma de entrega </b></h6>
+                </div>
+                <div class="card-block">
+                    <div class="col-lg-12">
+                        <div class="input-group" id="forma-entrega">
+                            <span class="input-group-addon">
+                                <input type="radio" name="sedex" ng-click="atualizaSedex()">
+                            </span> 
+                            <p class="offset-3" style="margin-top: 15px" >SEDEX R$ {{sedex}}</p>
+                        </div><br/>
+                        <div class="input-group" id="forma-entrega">
+                            <span class="input-group-addon">
+                                <input type="radio" name="sedex"  ng-click="atualizaPac()">
+                            </span>
+                            <p class="offset-3" style="margin-top: 15px">PAC R$ {{pac}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card card-p" style="margin-bottom: 15px">
+                <div class="card-header">
+                    <h6><i class="fa fa-home"></i> <b>Endereço</b></h6>
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="endereco-confirmacao" ng-repeat="endereco in enderecos">
+                                <div class="input-group" id="endereco-lista">
+                                    <span class="input-group-addon">
+                                        <input type="radio" name="endereco" ng-click="getIdEndereco(endereco.idEndereco)">
+                                    </span>
+                                    <p  class="offset-1" style="margin-top: 15px">{{endereco.cep}}, {{endereco.endereco}}, {{endereco.numero}}</p>
+                                </div><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button style="cursor: pointer;" class="btn btn-info btn-sm" ng-click="alterarDadosEndereco()">Alterar endereços</button>
+                    <button style="cursor: pointer;" class="btn btn-secondary btn-sm" ng-click="adicionarEndereco()">Adicionar endereço</button>
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6> <i class="fa fa-money"></i><b> Forma de pagamento </b></h6>
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="dados-forma-pagamento" ng-repeat="pagamento in pagamentos">
+                                <div class="input-group" id="forma-pagamento">
+                                    <span class="input-group-addon">
+                                        <input type="radio" name="thisguyfucks" ng-click="getIdPagamento(pagamento.idPagamento)">
+                                    </span> 
+                                    <p class="offset-1" style="margin-top: 15px">{{pagamento.tipo}}</p>
+                                </div><br/>
+                            </div>
+                        </div>
+                        <div class="col-6" id="dados-forma-pagamento-2">
+                            <p ng-hide="boleto">10% de desconto</p>
+                            <p ng-hide="mercado">15x de R$ 113,33 s/ juros (5% de desconto)</p>
+                            <p ng-hide="pag">em até 18 vezes</p>
+                            <p ng-hide="pay">12x de R$ 113,33 s/ juros (34% de desconto)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+
+                    <button class="btn-new btn-3 btn-3a icon-cart" ng-click="finalizarCompra()">FINALIZAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

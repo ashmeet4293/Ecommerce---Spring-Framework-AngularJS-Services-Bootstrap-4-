@@ -1,0 +1,42 @@
+<div class="container" ng-controller="minhaContaController">
+    <div class="row">
+        <div class="col-9 offset-3" style="margin-top: -14.5em;">
+            <table class="table table-bordered" ng-repeat="endereco in enderecos">
+                <thead>
+                    <tr>
+                        <th>Editar</th>
+                        <th>CEP</th>
+                        <th>Endereco</th>
+                        <th>Número</th>
+                        <th>Complemento</th>
+                        <th>Referencia</th>
+                        <th>Bairro</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="" ng-click="alterarEsteEnderecoPlease(endereco.idEndereco)">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="" ng-click="excluirEndereco(endereco.idEndereco, $index)">
+                                <i class="fa fa-remove"></i>
+                            </a>                            
+                        </td>
+                        <td>{{endereco.cep}}</td>
+                        <td>{{endereco.endereco}}</td>
+                        <td>{{endereco.numero}}</td>
+                        <td>{{endereco.complemento}}</td>
+                        <td>{{endereco.referencia}}</td>
+                        <td>{{endereco.bairro}}</td>
+                        <td>{{endereco.cidade}}</td>
+                        <td>{{endereco.estado}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary btn-lg" style="cursor: pointer;" ng-click="adicionarNovoEndereco()">Adicionar</button>
+        </div>
+    </div>
+</div>

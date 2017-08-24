@@ -1,0 +1,45 @@
+<div class="modal-body avaliar" style="background-color: #ffbd2e">
+
+    <div class="row">
+        <div class="col-12">
+            <span class="input input--isao">
+                <input class="input__field input__field--isao" type="text" ng-model="avaliacao.titulo"/>
+                <label class="input__label input__label--isao" for="input-38" data-content="Título">
+                    <span class="input__label-content input__label-content--isao"><i class="fa fa-smile-o"></i> Título</span>
+                </label>
+            </span>
+        </div>
+    </div>
+    
+    <div class="row"  >
+        <div class="col-12">
+            <p><b><i class="fa fa-thumbs-o-up"></i> Não seja breve. Diga-nos o que achou!</b> </p>
+            <textarea class="form-control text-area" ng-model="avaliacao.texto"></textarea>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-3 offset-3" >
+            <p><b>Nota</b></p>
+            <select class="select-avaliar" ng-model="avaliacao.nota">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+
+        <div class="col-6" >
+            <p><b>Recomenda?</b></p>
+            <select class="select-avaliar" ng-model="avaliacao.recomenda">
+                <option value="1"> Sim  </option>
+                <option value="2"> Não </option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer footer-1c" style="background-color: #ffbd2e">
+    <button class="btn btn-primary" ng-click="efetuarAvalicao()" style="cursor: pointer"><i class="fa fa-check"></i> Avaliar</button>
+</div>

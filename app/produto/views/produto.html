@@ -1,0 +1,149 @@
+<div class="container" ng-controller="ProdutoController" style="background: white" >
+    <div class="row" style="margin-bottom: 25px" autoscroll="true"> 
+        <div class="col-6 img-card">
+            <img class="img-thumbnail img-relacionado" ng-src="{{jogo.foto}}">
+        </div>
+        <div class="col-6 ">
+            <div class="card card-sem-borda">
+                <div class="card-header card-produto">
+                    <h1 style="font-size: 3em" class="text-center"><b>{{jogo.nomeJogo}}</b></h1>
+                    <h3 class="text-center">{{jogo.console.nomeConsole}}</h3>
+                </div>
+                <div class="card-block">
+                    <h1 class="offset-1"> <b style="font-size: 1.3em">R$ {{jogo.preco}} </b></h1>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="offset-1" style="font-size: 13px"> <i class="fa fa-money"></i> Boleto Bancário <b class="badge badge-info" style="font-size: 25px"> R$ {{jogo.preco - jogo.preco * 0.10| number : 2}}  </b> 10% de desconto</p>
+                            <p class="offset-1" style="font-size: 15px"><i class="fa fa-credit-card"></i> até 12x de R$ {{jogo.preco / 12| number : 2 }} sem juros</p>
+                            <p class="offset-1" style="font-size: 15px"> <i class="fa fa-cc-visa"></i> R$ 854,99 em 1x no cartão americanas.com (14% de desconto) Ou R$ 949,99 em até 12x de R$ 79,16 s/ juros ver parcelas</p>
+                            <span class="input input--isao">
+                                <input class="input__field input__field--isao" type="text"/>
+                                <label class="input__label input__label--isao" for="input-38" data-content="FRETE">
+                                    <span class="input__label-content input__label-content--isao"><i class="fa fa-truck"></i> FRETE</span>
+                                    <button class="btn btn-success btn-sm " style="cursor: pointer" ng-click="mostreATable()">OK</button>
+                                </label>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <p><i class="fa fa-star fa-2x" style="color: #ffcb2c"></i>
+                                <i class="fa fa-star fa-2x" style="color: #ffcb2c"></i>
+                                <i class="fa fa-star fa-2x" style="color: #ffcb2c"></i>
+                                <i class="fa fa-star fa-2x" style="color: #ffcb2c"></i>
+                                <i class="fa fa-star fa-2x" style="color: #ffcb2c"></i>
+                            </p>
+                            <button class="btn-new btn-3 btn-3a icon-cart pull-3" ng-click="enviarParaCompra(jogo)" style="margin-top: 69px">Comprar</button>
+                        </div>
+                    </div><br/>
+
+                    <div class="row show" ng-show="showTable">
+                        <div class="col-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Entrega</th>
+                                        <th>Frete </th>
+                                        <th>Prazo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Rápida</td>
+                                        <td>R$ 9,59</td>
+                                        <td>3 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Economica</td>
+                                        <td>R$ 74,29</td>
+                                        <td>60 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Agendada</td>
+                                        <td>Gratuito</td>
+                                        <td>a agendar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer card-produto">
+                    <div class="offset-4">
+                        <button class="btn-new margin btn-7 btn-icon-only icon-heart ">Like</button>
+                        <button class="btn-new margin btn-8 btn-icon-only icon-shopping-cart">1-click</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Produtos relacionados</h1>
+            <div class="row" >
+
+                <div class="col-3" ng-repeat="jogo in jogosConsole" style="margin-bottom: 15px;">
+                    <div class="card text-center avaliacoes ">
+                        <div class="card-block">
+                            <img class="img-thumbnail img-relacionado" ng-src="{{jogo.foto}}" width="120px">
+                            <p><a href="" ng-click="jogoPorDetalhe(jogo)">{{jogo.nomeJogo}}</a></p>
+                            <p>{{jogo.console.nomeConsole}}</p>
+                            <p style="color: black"> <b>R$ {{jogo.preco}}</b></p>
+                            <p>até <b>12x</b> de <b> R$ {{jogo.preco / 12| number: 2}}</b> sem juros
+                                ou <span class="badge badge-success" style="font-size: 18px"> R$ {{jogo.preco - jogo.preco * 0.10| number : 2}} </span> via <b>Boleto Bancário</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3" ng-repeat="acessorio in acessoriosConsole" style="margin-bottom: 15px;">
+                    <div class="card text-center avaliacoes">
+                        <div class="card-block">
+                            <img class="img-thumbnail img-relacionado" ng-src="{{acessorio.foto}}" width="120px">
+                            <p> <a href=""> {{acessorio.nomeAcessorio}}</a></p>
+                            <h6>{{acessorio.console.nomeConsole}}</h6>
+                            <p style="color: black"> <b>R$ {{acessorio.preco}}</b> </p>
+                            <p>até <b>12x</b> de <b> R$ {{acessorio.preco / 12| number: 2}}</b> sem juros
+                                ou <span class="badge badge-success" style="font-size: 18px"> R$ {{acessorio.preco - acessorio.preco * 0.10| number : 2}} </span> via <b>Boleto Bancário</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col-12">
+            <h1 class="text-center">Avaliações</h1>
+
+            <div class="alert alert-warning" role="alert" ng-hide="avaliacaoNao">
+                <h2 class="text-center"><b>Este jogo ainda não possui avaliações.</b></h2>
+            </div>
+
+            <div class="alert alert-success" role="alert" ng-hide="avaliacaoSim">
+                <h2 class="text-center"><b>Este jogo possui {{total}} avaliações. Veja o que nossos clientes dizem!</b></h2>
+            </div>
+
+            <div class="row" >
+                <div class="col-6" ng-repeat="avaliacao in avaliacoes" style="margin-bottom: 15px;">
+                    <div class="card avaliacoes">
+                        <div class="card-block">
+                            <p ><h3 class="text-center">{{avaliacao.cliente.nome}}</h3></p>
+
+                            <p class="text-center" ng-class="recomendaJogo(avaliacao.recomenda)"></p>
+
+                            <p><b>Nota {{avaliacao.nota}}.0</b></p>
+
+                            <p>
+                                <i class="fa fa-star" style="color: #ffcb2c" ng-repeat="nota in range(avaliacao.nota)"></i>
+                            </p>
+
+                            <h5 class="card-text"><b>{{avaliacao.titulo}}</b></h5>
+                            <p class="card-text">{{avaliacao.texto}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

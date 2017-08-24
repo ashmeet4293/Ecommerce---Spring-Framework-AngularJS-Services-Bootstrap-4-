@@ -1,0 +1,35 @@
+#meus-pedidos p{
+    font-size: 12px;
+}
+
+.avaliar p{
+  font-size: 15px;  
+}
+
+.text-area{
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 3px solid black;
+    border-radius: 0;
+    outline:none;
+    height: 120px;
+}
+
+.form-control:focus {
+    color: #464a4c;
+    background-color: #fff;
+    border-color: black;
+    outline: 0;
+}
+
+.select-avaliar{
+    border: 3px solid black;
+}

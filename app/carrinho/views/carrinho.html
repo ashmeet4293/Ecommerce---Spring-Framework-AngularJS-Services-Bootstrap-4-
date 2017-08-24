@@ -1,0 +1,30 @@
+<div class="container" ng-controller="CarrinhoController">
+    <div class="row">
+        <div class="col-3">
+            <img width="286px" height="269" ng-src="{{jogoNoCarrinho.foto}}">
+        </div>
+        <div class="col-9">
+
+            <div class="card text-center">
+
+                <div class="card-block">
+                    <h1 class="card-title">{{jogoNoCarrinho.nomeJogo}}</h4>
+                        <h4 class="card-text">{{jogoNoCarrinho.console.nomeConsole}}</h4>
+                        <h2 class="card-text">R$ {{jogoNoCarrinho.preco}}</h2>
+                        <div class="row">
+                            <div class="col-1">
+                                <p style="font-size: 12px"><b>Quantidade </b><input class="form-control input-sm" ng-model="jogoNoCarrinho.qtd" style="width: 42px; border: 1px solid black;"></p>
+                            </div>
+                        </div>
+                        <h3>Total R$ {{jogoNoCarrinho.preco * jogoNoCarrinho.qtd| number:2}}</h3>
+                </div>
+                <div class="card-footer">
+                    <a href="" class="btn btn-success" ng-click="confirmacao(jogoNoCarrinho)">Confirmar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

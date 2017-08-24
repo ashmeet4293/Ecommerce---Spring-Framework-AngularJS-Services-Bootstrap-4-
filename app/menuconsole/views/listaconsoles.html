@@ -1,0 +1,20 @@
+<div class="container" ng-controller="MenuConsoleController">
+    <div class="row offset-3">
+        <div class="col-3" ng-repeat="videogame in videogames" >
+            <div class="card-group" id="ajuste-novo">
+                <div class="card" id="ajuste-card">
+                    <img class="card-img-top" ng-src="{{videogame.foto}}" width="170px" height="150">
+                    <div class="card-block" >
+                        <h6 class="card-title"><a href="" ng-click="jogoPorDetalhe(jogo)">{{videogame.nomeVideoGame}}</a></h6>
+                        <p class="card-text"><b>{{videogame.nomeVideoGame}}</b></p>
+                        <h4 class="card-text"><b>R$ {{videogame.preco}}</b></h4>
+                        <p>até <b>12x</b> de <b> R$ {{videogame.preco / 12| number: fractionSize}}</b> sem juros
+                            ou <span class="badge badge-success"> R$ {{videogame.preco - videogame.preco * 0.10| number : fractionSize}} </span> via Boleto Bancário</p>
+                        <a href="" ng-click="comprarComUmClique(jogo)" class="btn btn-info btn-sm offset-3"><i class="fa fa-shopping-cart"></i></a>
+                        <a href="" ng-click="removerJogoDesejado(desejo.idDesejo, $index)" class="btn btn-info btn-sm "><i class="fa fa-remove"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

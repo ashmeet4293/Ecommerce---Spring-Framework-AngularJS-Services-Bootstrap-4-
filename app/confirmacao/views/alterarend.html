@@ -1,0 +1,74 @@
+<div class="modal-header">
+  <h1>Alteração</h1>
+</div>
+
+<h4 class="offset-3">Dados Pessoais</h4><br/>
+
+<div class="modal-body">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-responsive" style="font-size: 12px">
+        <thead>
+          <tr>
+            <th> Alterar </th>
+            <th> Endereço </th>
+            <th> CEP </th>
+            <th> Número </th>
+            <th> Complemento </th>
+            <th> Referencia </th>
+            <th> Bairro </th>
+            <th> Cidade </th>
+            <th> Estado </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="font-size: 11px">
+            <td>
+              <a href="" ng-click="alterarEsteEndereco(endereco)">
+                <i class="fa fa-edit fa-2x"> </i>
+              </a>
+            </td>
+            <td>
+                <span ng-show="campo">{{endereco.endereco}}</span>
+                <input ng-hide="input" tyep="text" class="small-input" ng-model="endereco.endereco">
+            </td>
+            <td>
+                <span ng-show="campo"> {{endereco.cep}}</span>
+                <input ng-hide="input" type="text" class="small-input" ng-model="endereco.cep">
+            </td>
+            <td>
+                <span ng-show="campo">{{endereco.numero}}</span>
+                <input ng-hide="input" type="text" class="small-input" ng-model="endereco.numero">
+            </td>
+            <td>
+                <span ng-show="campo">{{endereco.complemento}}</span>
+                <input ng-hide="input" type="text" class="small-input" ng-model="endereco.complemento">
+            </td>
+            <td>
+                <span ng-show="campo">{{endereco.referencia}}</span>
+                <input ng-hide="input" type="text" class="small-input" ng-model="endereco.referencia">
+            </td>
+            <td>
+               <span ng-show="campo">{{endereco.bairro}}</span>
+               <input ng-hide="input" type="text" class="small-input" ng-model="endereco.bairro">
+            </td>
+            <td>
+               <span ng-show="campo">{{endereco.cidade}}</span>
+               <input ng-hide="input" type="text" class="small-input" ng-model="endereco.cidade">
+            </td>
+            <td>
+                <span ng-show="campo">{{endereco.estado}}</span>
+                <input ng-hide="input" type="text" class="small-input" ng-model="endereco.estado">
+            </td>
+          </tr>
+        </tbody> 
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button style="cursor: pointer" class="btn btn-success btn-sm" ng-click="salvarAlteracao(endereco)">Salvar</button>
+  <button style="cursor: pointer" class="btn btn-secondary btn-sm" ng-click="Fechar()">Cancelar</button>
+</div>
+</div>

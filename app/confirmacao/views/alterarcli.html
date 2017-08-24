@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h1>Alteração</h1>
+</div>
+<h4 class="offset-3">Dados Pessoais</h4><br/>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-6">
+            <p><b>Nome: </b>{{cliente.nome}}</p>
+            <p><b>Celular: </b>{{cliente.celular}}</p>
+            <p><b>Telefone: </b>{{cliente.telefone}}</p>
+            <p><b>CPF: </b>{{cliente.cpf}}</p>
+        </div>
+
+        <div class="col-6" ng-hide="esondeInputs" >
+            <input class="form-control alterar-cliente" type="text" ng-model="cliente.nome">
+            <input class="form-control alterar-cliente" id="celular" type="text" ng-model="cliente.celular">
+            <input class="form-control alterar-cliente" id="telefone" type="text" ng-model="cliente.telefone">
+            <input class="form-control alterar-cliente" id="cpf" type="text" ng-model="cliente.cpf">
+        </div>
+    </div>
+    <br/>
+
+    <div class="modal-footer">
+        <button style="cursor: pointer" class="btn btn-success btn-sm" ng-click="salvarAlteracao(cliente)" ng-hide="botaoSalvar">Salvar</button>
+        <button style="cursor: pointer" class="btn btn-primary btn-sm" ng-click="habilitarAlteracao()" ng-show="botaoAlterar">Alterar</button>
+        <button style="cursor: pointer" class="btn btn-secondary btn-sm" ng-click="Fechar()">Cancelar</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+         $('#telefone').mask('(00) 0000-0000');
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+         $('#celular').mask('(00) 00000-0000');
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+         $('#cpf').mask('000.000.000-00');
+    });
+</script>

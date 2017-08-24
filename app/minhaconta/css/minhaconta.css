@@ -1,0 +1,78 @@
+.minha-conta{
+    border: 4px solid black;
+    background-color: #29c843;
+    padding: 17px;
+}
+
+.minha-conta a{
+    font-size: 18px;
+    font-weight: bolder;
+    color: black;
+}
+
+#dados-cliente p{
+    font-size: 17px;
+}
+
+#dados-cliente input{
+    width: 60%;
+    border: 4px solid black;
+    background-color: #ffbd2e;
+    font-size: 20px;
+}
+
+.img-desejos{
+    border: 1px solid black;
+}
+
+.img-des{
+    width: 100%;
+    height: 130px;
+}
+
+
+.help-me{
+    margin-left: 12px;
+}
+
+#ajuste{
+    margin-top: -14.5em;
+    margin-bottom: 318px;
+
+}
+
+#dados-cliente button{
+    cursor: pointer;
+}
+
+#dados-cliente b{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+#dados-cliente input{
+    margin-bottom: 8px;
+}
+
+#dados-cliente a{
+    margin-bottom: 8px;
+}
+
+.card-block.card__label label{
+    font-size: 12px;
+}
+
+#input-senha{
+    margin-right: 1em;
+    margin-left: 8em;
+    margin-top: 0.3em;
+    margin-bottom: 0em;
+}
+
+#cadastro-endereco-modal{
+    font-size: 13px;
+}
+
+#ajuste-card p{
+    font-size: 14px;
+}

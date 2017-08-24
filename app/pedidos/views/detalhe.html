@@ -1,0 +1,31 @@
+<div class="container" ng-controller="PedidosController">
+    <div class="row">
+        <div class="col-9 offset-3" style="margin-top: -14.5em">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Jogo</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Entrega</th>
+                        <th>Preço total</th>
+                        <th>Data do Pedido</th>
+                        <th>Avaliar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{detalhePedido.jogo.nomeJogo}}</td>
+                        <td>{{detalhePedido.quantidade}}</td>
+                        <td>R$ {{detalhePedido.jogo.preco}}</td>
+                        <td>R$ {{detalhePedido.frete}}</td>
+                        <td>R$ {{detalhePedido.total| number: 2}}</td>
+                        <td> {{detalhePedido.dataPedido| date: 'MMMM d, y h:mm:ss a'}}</td>
+                        <td> <a href="" ng-click="modalAvaliarJogo(detalhePedido.jogo.idJogo)">Avaliar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="" class="btn btn-primary" ng-click="modalDetalhesPedido()">Status</a>
+        </div>
+    </div>
+</div>

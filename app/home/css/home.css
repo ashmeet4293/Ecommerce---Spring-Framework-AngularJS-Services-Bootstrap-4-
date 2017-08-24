@@ -1,0 +1,42 @@
+.some-right{
+    margin-left: 109px;
+    border: 1px solid black;
+}
+
+#img-home{
+    width: 150px;
+    height: 150px;
+    margin-left: 48px;
+}
+
+
+.text-info p{
+    font-size: 18px;
+    color: #595a5b!important;
+}
+
+.text-dados p{
+    font-size: 13px;
+}
+
+#forma-pagamento-2{
+    border: 5px solid #000000;
+}
+
+#forma-entrega-2{
+    border: 5px solid #000000;
+}
+
+.input-group-addon-2 {
+    padding: 17px;
+    background-color: #ffbd2e;
+    border: 0px solid #ffbd2e;
+}
+
+.card-home{
+    font-size: 14px;
+}
+
+.footer-1c{
+    border-top: 1px solid #ffbd2e;
+}

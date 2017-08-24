@@ -1,0 +1,24 @@
+<div class="container" ng-controller="PedidosController">
+    <div class="row">
+    <div class="col-9 offset-3" style="margin-top: -14.5em;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Detalhes</th>
+                        <th>Pedido</th>
+                        <th>Jogo</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pedido in pedidos">
+                        <td><button class="btn btn-primary btn-sm offset-4" ng-click="detalhesDoPedido(pedido)" style="cursor: pointer"><i class="fa fa-check"></i></button></td>
+                        <td>{{pedido.idPedido}}</td>
+                        <td>{{pedido.jogo.nomeJogo}}</td>
+                        <td>{{pedido.dataPedido | date: 'MMMM d, y h:mm:ss a'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

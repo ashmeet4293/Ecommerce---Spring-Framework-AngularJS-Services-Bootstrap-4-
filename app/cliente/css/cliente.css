@@ -1,0 +1,57 @@
+#login{
+    border: 5px solid #636c72;
+    padding: 21px;
+}
+
+#dados-confirmacao{
+    border: 5px solid black;
+    padding: 21px;
+    background-color: #ffbd2e;
+}
+
+#dados-confirmacao label{
+    font-size: 13px;
+}
+
+#dados-confirmacao input{
+    font-size: 13px;
+}
+
+#dados-pessoais{
+    border: 5px solid black;
+    background-color: #29c843;
+    height: 1%;
+    padding-left: 63px;
+    padding-top: 52px;
+    padding-bottom: 26px;
+}
+
+#dados-pessoais label{
+    font-size: 13px;
+}
+#dados-pessoais input{
+    font-size: 13px;
+}
+
+#dados-pessoais input{
+    font-size: 13px;
+}
+
+#dados-endereco{
+    border: 5px solid black;
+    background-color: #ff5252;
+    height: 1%;
+    padding-left: 57px;
+    padding-top: 52px;
+    padding-bottom: 26px;
+}
+
+#dados-endereco label{
+    font-size: 13px;
+}
+
+#dados-endereco input{
+    font-size: 13px;
+}
+
+

@@ -1,0 +1,20 @@
+<div class="container" ng-controller="minhaContaController">
+    <div class="row offset-3 example-animate-container">
+        <div class="col-3 animate-repeat" ng-repeat="desejo in desejos" >
+            <div class="card-group" id="ajuste">
+                <div class="card" id="ajuste-card">
+                    <img class="card-img-top" ng-src="{{desejo.jogo.foto}}" width="170px" height="150">
+                    <div class="card-block" >
+                        <h6 class="card-title"><a href="" ng-click="jogoPorDetalhe(jogo)">{{desejo.jogo.nomeJogo}}</a></h6>
+                        <h5 class="card-text"><b>R$ {{desejo.jogo.preco}}</b></h5>
+                        <p>até <b>12x</b> de <b> R$ {{desejo.jogo.preco / 12| number: 2}}</b> sem juros
+                            ou <span class="badge badge-success" style="font-size: 18px"> R$ {{desejo.jogo.preco - desejo.jogo.preco * 0.10| number : 2}} </span> via <b>Boleto Bancário</b>
+                        </p>
+                        <a href="" ng-click="comprarComUmClique(desejo.jogo)" class="btn btn-info btn-sm offset-3"><i class="fa fa-shopping-cart"></i></a>
+                        <a href="" ng-click="removerJogoDesejado(desejo.idDesejo, $index)" class="btn btn-info btn-sm "><i class="fa fa-remove"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

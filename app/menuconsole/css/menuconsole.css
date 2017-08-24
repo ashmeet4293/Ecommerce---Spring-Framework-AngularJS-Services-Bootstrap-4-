@@ -1,0 +1,60 @@
+.menu-console{
+    border: 7px solid black;
+    background-color: #00B2E2;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+
+.menu-console p{
+    font-size: 10px;
+    color: white;
+    background-color: black;
+    border: 4px solid black;
+    padding-left: 59px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 87%;
+    cursor: pointer;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.menu-console a{
+    color: white;
+}
+
+#lista-jogos{
+    margin-top: -51.7%;
+    margin-bottom:  179px;
+    margin-left: 20%;
+}
+
+.menu-console-games{
+    border: 7px solid black;
+    background-color: #00B2E2;
+    padding: 41px;
+    box-shadow: 10px 10px 5px #888888;
+    margin-bottom: 5px;
+}
+
+.menu-console-games p{
+    font-size: 10px;
+    color: black;
+    border: 3px solid #000000;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100%;
+}
+
+#hover-name:hover{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    border: 3px solid #a7a7a7;
+}
+
+#ajuste-novo{
+    margin-top: -606.8%;
+    margin-bottom: 1113px;
+}
